@@ -1,5 +1,5 @@
 saveQueue=syncProgress().catch(()=>{$('saveStatus').textContent='Chưa tải được tiến độ. Bạn vẫn có thể luyện tập.';});
-function wordImage(w,size=320){const id=unique.findIndex(x=>x.en===w.en);return `<img src="/img/word-${id}.webp" alt="Minh họa: ${w.vi}" loading="lazy" width="320" height="320">`}
+function wordImage(w,size=320){const id=unique.findIndex(x=>x.en===w.en);return `<img src="./img/word-${id}.webp" alt="Minh họa: ${w.vi}" loading="lazy" width="320" height="320">`}
 let visibleWords=12;
 const libraryCategory=$('libraryCategory');
 categories.forEach(c=>{const option=document.createElement('option');option.value=c;option.textContent=c;libraryCategory.appendChild(option)});
@@ -7,3 +7,4 @@ function renderLibrary(){const term=$('wordSearch').value.trim().toLocaleLowerCa
 $('wordSearch').oninput=()=>{visibleWords=12;renderLibrary()};libraryCategory.onchange=()=>{visibleWords=12;renderLibrary()};$('loadMore').onclick=()=>{visibleWords+=12;renderLibrary()};renderLibrary();
 
 document.querySelectorAll(".site-header nav a").forEach(link=>link.addEventListener("click",()=>goHome()));
+
